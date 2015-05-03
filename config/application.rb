@@ -22,5 +22,10 @@ module HelpMeImprove
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    
+    Taric.configure! do |config|
+      config.api_key = 'f0a5ee1b-3e5a-4cad-ab59-e2ffb0f3cf4a'
+      config.adapter = :typhoeus # default is Faraday.default_adapter
+    end
   end
 end
