@@ -3,22 +3,23 @@
 	<h2>
   	  So you want to get better at League of Legends, eh? Lets see what I can help you with.
 	</h2>
-
+	<%= render 'layouts/errors' if flash[:error] %>
 	<%= form_tag("/search", method: "post", class: "form-inline", role: "form") do %>
 		<%= select_tag(:region, options_for_select([
-				['Brazil', 'BR'], 
-				['EU Nordic and East', 'EUNE'], 
-				['EU West', 'EUW'], 
-				['Korea', 'KR'], 
-				['Latin America North', 'LAN'], 
-				['Latin America South', 'LAS'], 
-				['North America', 'NA'], 
-				['Oceania', 'OCE'], 
-				['Public Beta Environment', 'PBE'], 
-				['Russia', 'RU'], 
-				['Turkey', 'TR'], 
-			], 'NA'), class: "form-control") %>
-		<%= text_field_tag(:summonerName, nil, placeholder: "Summoner Name", class: 'form-control') %>
+				['Brazil', 'br'], 
+				['EU Nordic and East', 'eune'], 
+				['EU West', 'euw'], 
+				['Korea', 'kr'], 
+				['Latin America North', 'lan'], 
+				['Latin America South', 'las'], 
+				['North America', 'na'], 
+				['Oceania', 'oce'], 
+				['Public Beta Environment', 'pbe'], 
+				['Russia', 'ru'], 
+				['Turkey', 'tr'], 
+			], 'na'), class: "form-control") %>
+		<%= text_field_tag(:summonerName, nil, :required => true, placeholder: "Summoner Name", class: 'form-control') %>
 		<%= submit_tag("Search", class:"btn btn-primary") %>
 	<% end %>
 </div>
+

@@ -1,0 +1,8 @@
+<pre>
+	<% @matches.each do |match| %>
+	   	<%= match["participants"][0]["timeline"]["role"]%>
+	   	<%= match["participants"][0]["timeline"]["lane"]%>
+	   	<%= match["participants"][0]["championId"]%>
+   		</br>
+	<% end %>
+</pre>
